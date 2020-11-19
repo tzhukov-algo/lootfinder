@@ -89,7 +89,17 @@ ItemDisplay[GEM>0 QTY>1]: %NAME% %WHITE%[x%QTY%]
 
 ItemDisplay[leg]: > > > %NAME% < < <
 
-ItemDisplay[NMAG (aqv OR cqv)]:
+ItemDisplay[INF]:
+
+// Hiding arrows and bolts
+ItemDisplay[aqv OR cqv]:
+
+// Hiding Normal, Regular, Non-Superior, Armors and Weapons with less than 2 Sockets as well as Normal Magic Armors and Weapons starting at level 30
+ItemDisplay[(ARMOR OR WEAPON) NORM (MAG OR (NMAG SOCK<2 !SUP !leg)) CLVL>29 !RW !CIRC]:
 
 ItemDisplay[SOCK>0]: %NAME% [%SOCKETS%]%CONTINUE%
 ItemDisplay[ETH]: eth %NAME%
+
+// Marking Exceptional and Elite possible Runeword Bases
+ItemDisplay[EXC SOCK>1 !RW]:	%NAME%%YELLOW%rwb%CONTINUE%
+ItemDisplay[ELT SOCK>1 !RW]:	%NAME%%ORANGE%rwb%CONTINUE%
